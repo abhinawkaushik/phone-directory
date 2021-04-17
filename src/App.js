@@ -1,5 +1,5 @@
 import Header from './Header';
-import './App.css'
+import './App.css';
 function App() {
   let subscribers = [
     {
@@ -29,7 +29,7 @@ function App() {
             <span className="grid-item">{sub.name}</span>
             <span className="grid-item">{sub.phone}</span>
             <span className="grid-item action-btn-container">
-              <button className="custom-btn delete-btn">Delete</button>
+              <button className="custom-btn delete-btn" onClick={clickHandler.bind(this,"Delete Clicked")}>Delete</button>
             </span>
           </div>
         })}
@@ -37,5 +37,7 @@ function App() {
     </div>
   );
 }
-
+function clickHandler(message) {
+  alert(message)
+}
 export default App;
