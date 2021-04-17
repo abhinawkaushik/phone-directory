@@ -7,8 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import './common/common.css'
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <AddSubscriber/>
+    <App />    
   </React.StrictMode>,
   document.getElementById('root')
 );
