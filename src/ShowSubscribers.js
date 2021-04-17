@@ -1,7 +1,7 @@
 import Header from './Header';
-import './App.css';
+import './ShowSubscribers.css';
 import React, { Component } from 'react';
-class App extends Component{
+class ShowScribers extends Component{
   constructor(){
     super()
 this.state = {
@@ -11,6 +11,16 @@ this.state = {
   clickHandler= (e)=>{
     alert(e);
   }
+  componentDidMount(){
+    let newSubscriber = {
+        id:1,
+        name:'Abhinaw',
+        phone:'99999'
+    }
+    let subscribersList = this.state.subscribersListToShow
+    subscribersList.push(newSubscriber)
+    this.setState({subscribersListToShow:subscribersList})
+}
   render(){
     return (
       <div>
@@ -22,7 +32,7 @@ this.state = {
           <span className="grid-item name-heading">Name</span>
           <span className="grid-item phone-heading">Phone</span>
         </div>
-        {this.state.subscribersListToShow.map(sub => {
+        {this.props.subscribersList.map(sub => {
           return <div key={sub.id} className="grid-container">
             <span className="grid-item">{sub.name}</span>
             <span className="grid-item">{sub.phone}</span>
@@ -37,4 +47,4 @@ this.state = {
   }
 }
 
-export default App;
+export default ShowScribers;
